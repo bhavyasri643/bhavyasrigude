@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .my-custom-content {
+      padding: 48px;
+    }
+    
+    .w3-jumbotron {
+      background-image: url('image.jpeg');
+      background-size: cover;
+      height: 600px;
+      color: white;
+    }
+
+    .active-link {
+  background-color: #9b9b9b !important; /* Override any other background color */
+  color: #000 !important; /* Ensure text color is black for visibility */
+}
+
+    .w3-bar .w3-bar-item, .w3-dropdown-content a {float: right; clear: none;}
+    .w3-dropdown-click .w3-dropdown-content { display: none; }
+    .w3-dropdown-click .w3-button { white-space: normal; }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div class="w3-bar w3-light-grey">
+    <div class="w3-dropdown-click w3-right">
+      <button onclick="myFunction()" class="w3-button">Projects <i class="fa fa-caret-down"></i></button>
+      <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
+        <a href="computerscience.html#courses" class="w3-bar-item w3-button">Required Courses</a>
+        <a href="computerscience.html#ms" class="w3-bar-item w3-button">MS Degree Offers</a>
+        <a href="computerscience.html" class="w3-bar-item w3-button">Computer Science Department</a>
+      </div>
+    </div>
+    <a href="surveypage.html" class="w3-bar-item w3-button">Survey Page</a>
+    <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+    <a href="#about" class="w3-bar-item w3-button">About</a>
+    <a href="#home" class="w3-bar-item w3-button">Home</a>
+    <a href="#home" class="w3-bar-item w3-button">My Portfolio</a>
+  </div>
+
+
+
+  <!-- Header with background image -->
+  <div class="jumbotron jumbotron-fluid"
+    style="background-image: url('image.jpeg'); background-size: cover; height: 600px;" id="home">
+    <div class="container text-right text-white">
+      <h1 class="display-3">Bhavya Sri Gude</h1>
+      <p class="lead">Web Developer | Designer | Creative</p>
+    </div>
+  </div>
+
+  <!-- Page content -->
+  <div class="w3-container my-custom-content">
+
+  <!-- About Section -->
+  <div id="about" class="w3-container w3-padding-64">
+    <h3>About Me</h3>
+    <p>Hello!</p>
+    <p>I'm Bhavya Sri Gude, currently pursuing my Master's in Computer Science at George Mason University. My journey in
+      the tech field began with my undergraduate degree in Computer Science, where I developed a strong foundation in
+      programming, data structures, and algorithms. This academic background paved the way for my role at Accenture, where
+      I worked for a year as a software engineer, contributing to various projects that enhanced my coding skills and
+      understanding of software development life cycles.</p>
+  
+    <p>My passion for technology is matched by my love for creativity and innovation. I find solace in dance and joy in
+      cooking, both of which allow me to express myself beyond the confines of code. These hobbies have taught me the
+      importance of balance, discipline, and creativity, qualities that I bring to my professional work.</p>
+  
+    <p>In pursuit of further specialization, I decided to advance my studies with a Master's in Computer Science. My
+      current academic focus includes artificial intelligence and machine learning, areas that fascinate me due to their
+      potential to solve real-world problems and transform industries. Through my studies, I aim to contribute to
+      advancements in these fields, leveraging technology to create impactful solutions.</p>
+  
+    <p>Outside of academia and professional commitments, I actively participate in community tech meetups and workshops.
+      These platforms allow me to stay updated with the latest technological trends, network with like-minded individuals,
+      and share my knowledge and experiences. I believe in the power of community learning and the role it plays in
+      fostering innovation.</p>
+  
+    <p>Looking ahead, I am excited about the opportunities and challenges that lie in the intersection of technology and
+      creativity. Whether it's developing software that improves lives, exploring the ethical implications of AI, or
+      finding innovative ways to integrate technology with art, I am eager to contribute my skills and passion to make a
+      positive impact.</p>
+  
+    <p>Thank you for visiting my portfolio. I look forward to connecting with fellow enthusiasts and professionals who are
+      equally passionate about using technology to create a better future.</p>
+  </div>
+
+
+    <!-- Contact Section -->
+    <div id="contact" class="w3-container w3-padding-64">
+      <h3 class="w3-center">Contact Me</h3>
+      <p>Bhavya Sri Gude<br>9335 lee highway<br>Fairfax, VA, 22031 <br>United States</p>
+      <p>Phone: +1 (737) 287-9338<br>Email: bgude@gmu.edu</p>
+      <h2 class="w3-center">Send Me a Message</h2>
+      <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="#" method="post">
+        <div class="w3-section">
+          <label>Your Name</label>
+          <input class="w3-input" type="text" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="w3-section">
+          <label>Your Email</label>
+          <input class="w3-input" type="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="w3-section">
+          <label>Your Message</label>
+          <textarea class="w3-input" name="message" placeholder="Your Message" required style="resize:none;"></textarea>
+        </div>
+        <button type="submit" class="w3-button w3-block w3-primary">Send Message</button>
+      </form>
+    </div>
+
+
+  </div>
+
+<!-- Footer -->
+<footer class="w3-center w3-dark-grey w3-padding-16">
+  Powered by <a href="https://www.w3schools.com/w3css/" class="w3-hover-opacity">W3.CSS</a>
+</footer>
+
+<script>
+  // This ensures that the dropdown functionality is correctly applied after the document has loaded.
+  document.addEventListener('DOMContentLoaded', function () {
+    // Attach click event listener to the dropdown button
+    document.querySelector('.w3-button').addEventListener('click', function () {
+      var dropdownContent = document.getElementById("Demo");
+      if (dropdownContent.classList.contains("w3-show")) {
+        dropdownContent.classList.remove("w3-show");
+      } else {
+        dropdownContent.classList.add("w3-show");
+      }
+    });
+
+    // Simplified active link handler for non-dropdown links
+    document.querySelectorAll('.w3-bar-item').forEach(item => {
+      item.addEventListener('click', function () {
+        // Remove active class from all items
+        document.querySelectorAll('.w3-bar-item').forEach(i => i.classList.remove('active-link'));
+        // Add active class to clicked item
+        this.classList.add('active-link');
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
+

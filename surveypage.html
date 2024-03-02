@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS Department Survey</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="styles.css" rel="stylesheet">
+  <style>
+    body {
+            background-color: #f2f2f2; /* Light gray background */
+        }
+
+        h1 {
+            color: #006633; /* GMU Green */
+        }
+
+        .navbar {
+            background-color: #006633; /* GMU Green for navbar */
+        }
+
+        .navbar-brand,
+        .navbar-nav .nav-link {
+            color: #fff; /* White text for navbar links */
+        }
+    
+    .survey-box {
+      border: 5px solid #006633; /* solid border in GMU green */
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* box-shadow */
+    }
+    .required {
+      color: red; /* visually indicate required fields */
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <img src="1.jpeg" width=40 height=40/img>
+    <a class="navbar-brand" href="#">GEORGE MASON UNIVERSITY</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="computerscience.html#ms">MS Degree Offers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="computerscience.html#courses">Required Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="surveypage.html">Survey Page</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="survey-box">
+      <h1 class="text-center">CS Department Survey</h1>
+      <form autocomplete="on">
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="username">Username <span class="required">*</span></label>
+          <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="address">Street Address <span class="required">*</span></label>
+          <input type="text" class="form-control" id="address" name="address" placeholder="Address" required>
+        </div>
+      </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="city-input">City <span class="required">*</span></label>
+            <input type="text" class="form-control" id="city-input" name="city" required>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="state-input">State <span class="required">*</span></label>
+            <input type="text" class="form-control" id="state-input" name="state" required>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="zip">Zip <span class="required">*</span></label>
+            <input type="text" class="form-control" id="zip" name="zip" required>
+            <span id="zip-error" style="color: red;"></span> <!-- Placeholder for zip error message -->
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="telephone">Telephone Number</label>
+            <input type="tel" class="form-control" id="telephone" name="telephone" placeholder="123-456-7890">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="email">Email <span class="required" placeholder="example@gmu.edu">*</span></label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+        </div>
+        <div class="row">
+        <div class="form-group col-md-6">
+          <label for="survey-date">Date of Survey <span class="required" placeholder="YYYY-MM-DD">*</span></label>
+          <input type="date" class="form-control" id="survey-date" name="survey-date" required>
+        </div>
+
+        <!-- New Data Field for Average and Maximum Computation -->
+        <div class="form-group col-md-6">
+          <label for="dataInput">Data <span class="required">*</span></label>
+          <input type="text" class="form-control" id="dataInput" name="dataInput"
+            placeholder="Enter ten numbers separated by commas" required>
+          <small class="form-text text-muted">Enter ten comma separated numbers between 1 and 100.</small>
+          
+          <div class="form-group">
+          <span id="averageOutput"></span><br>
+          <span id="maximumOutput"></span>
+        </div>
+        </div>
+        </div>
+        
+<div class="row">
+        <!-- Dropdown for what the user likes most about the campus -->
+        <div class="form-group col-md-6">
+          <label for="liked-most-dropdown">What do you like most about the campus? <span class="required">*</span></label>
+          <select class="form-control" id="liked-most-dropdown" name="liked[]" multiple>
+            <option value="students">Students</option>
+            <option value="location">Location</option>
+            <option value="campus">Campus</option>
+            <option value="atmosphere">Atmosphere</option>
+            <option value="dorm-rooms">Dorm Rooms</option>
+            <option value="sports">Sports</option>
+          </select>
+        </div>
+        
+        <!-- Dropdown for how the user became interested in the university -->
+        <div class="form-group col-md-6">
+          <label for="interest-dropdown">How did you become interested in the university? <span
+              class="required">*</span></label>
+          <select class="form-control" id="interest-dropdown" name="interest">
+            <option value="friends">Friends</option>
+            <option value="television">Television</option>
+            <option value="internet">Internet</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+</div>
+        <div class="row">
+<div class="form-group col-md-6">
+  <label for="graduation-date">High-School Graduation Date <span class="required">*</span></label>
+  <input type="date" class="form-control" id="graduation-date" name="graduation-date" required>
+</div>
+
+        <!-- Likelihood of recommendation dropdown -->
+        <div class="form-group col-md-6">
+          <label for="recommendation">Likelihood of Recommending this School <span class="required">*</span></label>
+          <select class="form-control" id="recommendation" name="recommendation" required>
+            <option value="">Select...</option>
+            <option value="Very Likely">Very Likely</option>
+            <option value="Likely">Likely</option>
+            <option value="Unlikely">Unlikely</option>
+          </select>
+        </div>
+      </div>
+
+        <!-- Other form fields -->
+        <div class="form-group">
+          <label for="comments">Additional Comments</label>
+          <textarea class="form-control" id="comments" name="comments" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript File -->
+    <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Cookie and Greetings
+    function setCookie(name, value, days) {
+      var expires = "";
+      if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    }
+
+    function greetUser() {
+      var user = getCookie("username");
+      var now = new Date();
+      var hour = now.getHours();
+      var greeting = "Welcome";
+      if (hour < 12) greeting = "Good morning";
+      else if (hour < 18) greeting = "Good afternoon";
+      else greeting = "Good evening";
+
+      if (user) {
+        alert(greeting + " " + user + ", welcome to GMU CS Department Survey");
+      } else {
+        user = prompt("Please enter your name:");
+        if (user) {
+          setCookie("username", user, 7); // Set cookie to expire in 7 days
+          greetUser(); // Greet the user after setting the cookie
+          
+        }
+      }
+    }
+
+    greetUser();
+    document.getElementById('username').focus();
+
+    // Data Calculation for Average and Maximum
+    document.getElementById('dataInput').addEventListener('blur', function () {
+      var data = this.value.split(',').map(function (item) {
+        return parseInt(item, 10);
+      });
+
+      if (data.length !== 10 || data.some(isNaN) || data.some(num => num < 1 || num > 100)) {
+        alert('Please enter exactly ten numbers between 1 and 100, separated by commas.');
+        return;
+      }
+
+      var sum = data.reduce(function (a, b) { return a + b; }, 0);
+      var average = sum / data.length;
+      var maximum = Math.max.apply(Math, data);
+
+      document.getElementById('averageOutput').textContent = "Average: " + average.toFixed(2);
+      document.getElementById('maximumOutput').textContent = "Maximum: " + maximum;
+    });
+
+    // Form Validation
+    // Inline username Validation - alphabets
+    document.getElementById("username").addEventListener('input', function () {
+      var regex = /^[a-zA-Z\s]+$/; // Assuming username should contain only letters and spaces
+      if (!regex.test(this.value)) {
+        this.setCustomValidity("Username must contain only letters and spaces.");
+      } else {
+        this.setCustomValidity("");
+      }
+      this.reportValidity();
+    });
+
+    // Inline Address Validation - general text, numbers and spaces
+    document.getElementById("address").addEventListener('input', function () {
+      if (this.value.trim() === "") {
+        this.setCustomValidity("Address cannot be empty.");
+        this.reportValidity();
+      } else {
+        this.setCustomValidity("");
+      }
+    });
+
+    // Inline City Validation - only letters and spaces
+    document.getElementById("city").addEventListener('input', function () {
+      if (!/^[a-zA-Z\s]+$/.test(this.value)) {
+        this.setCustomValidity("City must contain only letters and spaces.");
+        this.reportValidity();
+      } else {
+        this.setCustomValidity("");
+      }
+    });
+
+    // Inline State Validation - only letters and spaces
+    document.getElementById("state").addEventListener('input', function () {
+      if (!/^[a-zA-Z\s]+$/.test(this.value)) {
+        this.setCustomValidity("State must contain only letters and spaces.");
+        this.reportValidity();
+      } else {
+        this.setCustomValidity("");
+      }
+    });
+
+    // Inline ZIP Code Validation - must match ZIP code format
+    document.getElementById("zip").addEventListener('input', function () {
+      if (!/^\d{5}(-\d{4})?$/.test(this.value)) {
+        this.setCustomValidity("Invalid ZIP code format.");
+      } else {
+        this.setCustomValidity("");
+      }
+      this.reportValidity();
+    });
+
+
+    // Inline Telephone Number Validation - must match phone number format
+    document.getElementById("telephone").addEventListener('input', function () {
+      if (this.value && !/^\d{3}-\d{3}-\d{4}$/.test(this.value)) {
+        this.setCustomValidity("Telephone number must be in the format 123-456-7890.");
+        this.reportValidity();
+      } else {
+        this.setCustomValidity("");
+      }
+    });
+
+    // Inline Email Validation - must match email format
+    document.getElementById("email").addEventListener('input', function () {
+      if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.value)) {
+        this.setCustomValidity("Invalid email format.");
+      } else {
+        this.setCustomValidity("");
+      }
+      this.reportValidity();
+    });
+
+
+    // Inline Survey Date Validation - cannot be empty
+    document.getElementById("survey-date").addEventListener('change', function () {
+      if (!this.value) {
+        this.setCustomValidity("Please select a date for the survey.");
+        this.reportValidity();
+      } else {
+        this.setCustomValidity("");
+      }
+    });
+
+    // Inline Data Input Validation - check for ten numbers separated by commas
+    document.getElementById("dataInput").addEventListener('input', function () {
+      let nums = this.value.split(',');
+      let allNumsValid = nums.every(num => /^\s*\d+\s*$/.test(num) && num >= 1 && num <= 100);
+      if (!allNumsValid || nums.length !== 10) {
+        this.setCustomValidity("Enter ten numbers between 1 and 100, separated by commas.");
+      } else {
+        this.setCustomValidity("");
+      }
+      this.reportValidity();
+    });
+
+
+    // Inline Graduation Date Validation - cannot be empty
+    document.getElementById("graduation-date").addEventListener('change', function () {
+      if (!this.value) {
+        this.setCustomValidity("Please select your graduation date.");
+        this.reportValidity();
+      } else {
+        this.setCustomValidity("");
+      }
+    });
+
+    // Inline Validation for Dropdowns - "Liked most about campus" allows multiple selections so it's handled differently
+    document.getElementById("liked-most-dropdown").addEventListener('change', function () {
+      // Check if at least one option is selected
+      if (this.selectedOptions.length < 1) {
+        this.setCustomValidity("Please select at least one option.");
+        this.reportValidity();
+      } else {
+        this.setCustomValidity("");
+      }
+    });
+
+    // Inline Validation for "How did you become interested" - must have a selection
+    document.getElementById("interest-dropdown").addEventListener('change', function () {
+      if (!this.value) {
+        this.setCustomValidity("Please select how you became interested in the university.");
+        this.reportValidity();
+      } else {
+        this.setCustomValidity("");
+      }
+    });
+
+    // Inline Validation for "Likelihood of Recommending this School" - must have a selection
+    document.getElementById("recommendation").addEventListener('change', function () {
+      if (!this.value) {
+        this.setCustomValidity("Please indicate your likelihood of recommending this school.");
+        this.reportValidity();
+      } else {
+        this.setCustomValidity("");
+      }
+    });
+
+    // Inline Validation for Additional Comments - Optional, but can be validated for length or inappropriate content
+    document.getElementById("comments").addEventListener('input', function () {
+      if (this.value.length > 500) { // Example: limit comment length
+        this.setCustomValidity("Comments cannot exceed 500 characters.");
+        this.reportValidity();
+      } else {
+        this.setCustomValidity("");
+      }
+    });
+
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('zip').addEventListener('blur', function () {
+        var zipCode = this.value;
+
+        // Make an Ajax call to get the list of zipcodes
+        fetch('zipcodes.json')
+          .then(response => response.json())
+          .then(data => {
+            var zipEntry = data.zipcodes.find(z => z.zip === zipCode);
+            if (zipEntry) {
+              // If a matching zipcode is found, populate the city and state input fields
+              document.getElementById('city-input').value = zipEntry.city;
+              document.getElementById('state-input').value = zipEntry.state;
+              document.getElementById('zip-error').textContent = ''; // Clear any invalid zip message
+            } else {
+              // If no matching zipcode, keep the input fields clear and display an error message
+              document.getElementById('city-input').value = '';
+              document.getElementById('state-input').value = '';
+              document.getElementById('zip-error').textContent = 'Invalid zip';
+            }
+          })
+          .catch(error => console.error('Error fetching zipcodes:', error));
+      });
+    });
+
+
+    
+
+    </script>
+</body>
+</html>

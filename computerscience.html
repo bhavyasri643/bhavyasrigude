@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Department Information</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f2f2f2; /* Light gray background */
+        }
+
+        h1 {
+            color: #006633; /* GMU Green */
+        }
+
+        .navbar {
+            background-color: #006633; /* GMU Green for navbar */
+        }
+
+        .navbar-brand,
+        .navbar-nav .nav-link {
+            color: #fff; /* White text for navbar links */
+        }
+ .heading-box {
+        width: 1100px; /* Set the width of the box */
+        height: 100px; /* Set the height of the box */
+        background-color: #FFCC33; /* Set the background color */
+    }
+
+        /* Custom style class */
+        .custom-box {
+            border: 5px solid #006633; /* GMU Green border */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
+            padding: 20px;
+        }
+
+        /* Custom style for the heading box */
+        .heading-box {
+            border: 5px solid #006633; /* GMU Green border */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
+            padding: 20px;
+            margin-bottom: 30px; /* Add some space below the box */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+	<img src="1.jpeg" width= 40 height=40/img>
+        <a class="navbar-brand" href="#">GEORGE MASON UNIVERSITY</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ms">MS Degree Offers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#courses">Required Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="surveypage.html">Survey Page</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Heading Box -->
+    <div class="container mt-5">
+        <div class="heading-box">
+            <h1 class="text-center">Computer Science Department</h1>
+        </div>
+    </div>
+
+ <div class="container mt-5">
+ 
+
+            <h3>
+                <center>Welcome to George Mason University's Department of Computer Science!</center></h2>
+        </div>
+    <div id="about" class="container mt-5">
+
+        <!-- CS Department Description -->
+        <section  class="mb-5">
+          
+                <h2>About Us</h2>
+                <p>George Mason University's Computer Science (CS) department stands as a pillar of academic excellence and innovation within the realm of technology and computer science education. Situated in Fairfax, Virginia, George Mason University (GMU) boasts a dynamic and diverse learning environment, fostering the growth and development of aspiring computer scientists.<br>
+The CS department at GMU is renowned for its comprehensive curriculum, which covers a wide array of topics ranging from foundational computer science principles to advanced specialized areas such as artificial intelligence, cybersecurity, data science, and software engineering. The faculty members, comprised of distinguished scholars and industry experts, are dedicated to providing students with a rigorous yet supportive learning experience.<br>One notable aspect of George Mason University's CS department is its emphasis on hands-on learning and research opportunities. Students have access to state-of-the-art laboratories equipped with cutting-edge technology, allowing them to engage in practical experimentation and project-based learning. Additionally, the department fosters a culture of collaboration, encouraging students to participate in research projects alongside faculty members or fellow students, further enriching their academic experience.</p>
+           
+</section></div>
+<div class="w3-panel w3-yellow"><a href="surveypage.html"><center>Please Click Here to take the Survey for the Campus visit</center></a></div>
+<div class="w3-container w3-green" style="position:relative">
+
+        </section>
+
+        <!-- MS Degree Offers -->
+        <section id="ms" class="mb-5">
+            <div class="custom-box">
+                <h2>MS Degree Offers</h2>
+                <ul>
+                    <li>MS in Computer Science</li>
+                    <li>MS in Inoformation System</li>
+                    <li>MS in Information Science and Assurance</li>
+                    <li>MS in Software Engineering</li>
+                    <!-- Add more MS degree programs if needed -->
+                </ul>
+            </div>
+        </section>
+
+        <!-- Required Courses -->
+        <section id="courses">
+            <div class="custom-box">
+                <h2>Required Courses</h2>
+		<h5>Ms in Computer Science</h5>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Course Number</th>
+                            <th>Course Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CS 530</td>
+                            <td>Mathematical Foundations of Computer Science</td>
+                        </tr>
+                        <tr>
+                            <td>CS 531</td>
+                            <td>Computer Systems and Fundamentals of Programiming</td>
+                        </tr>
+                        <tr>
+                            <td>CS 583</td>
+                            <td>Analysis of Algorithms</td>
+                        </tr>
+		    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Bootstrap JS (optional, for navbar toggle) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // JavaScript to highlight active link
+        document.addEventListener("DOMContentLoaded", function () {
+            var navbarLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            navbarLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    navbarLinks.forEach(lnk => lnk.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
